@@ -1,1 +1,110 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,700');
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+html {
+  overflow: hidden;
+}
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-attachment: fixed;
+  font-family: 'Poppins';
+  font-weight: 400;
+  // background: linear-gradient(
+  //   135deg,
+  //   rgba(215, 230, 255, 1) 0%,
+  //   rgba(243, 219, 246, 1) 50%,
+  //   rgba(240, 220, 247, 1) 55%,
+  //   rgba(217, 227, 255, 1) 100%
+  // );
+  &:before {
+    content: '';
+    right: 0;
+    top: 0;
+    position: absolute;
+    width: 587px;
+    height: 705px;
+    background: url('/assets/right_top.png') no-repeat left top;
+  }
+}
+img {
+  max-width: 100%;
+}
+mat-chip[data-type='Admiralty'] {
+  &.mat-chip {
+    // @include gradientBtn(#da22ff, #9733ee);
+    &:hover {
+      animation: btn-gradient-animation 3s ease-in-out infinite;
+    }
+    color: #fff !important;
+    cursor: pointer;
+  }
+}
+[data-type='Bankruptcy'] {
+  &.mat-chip {
+    // @include gradientBtn;
+    &:hover {
+      animation: btn-gradient-animation 3s ease-in-out infinite;
+    }
+    color: #fff !important;
+    cursor: pointer;
+  }
+}
+[data-type='Business'] {
+  // @include category(#1fa2ff, #12d8fa);
+}
+[data-type='Civil Rights'] {
+  // @include category(#f09819, #edde5d);
+}
+[data-type='Criminal'] {
+  // @include category(#283048, #859398);
+}
+[data-type='Entertainment'] {
+}
+[data-type='Environmental'] {
+}
+[data-type='Family'] {
+}
+[data-type='Health'] {
+}
+[data-type='Immigration'] {
+}
+[data-type='Intellectual Property'] {
+}
+[data-type='International'] {
+}
+[data-type='Labor'] {
+}
+[data-type='Military'] {
+}
+[data-type='Personal Injury'] {
+}
+[data-type='Real Estate'] {
+}
+[data-type='Tax'] {
+}
+
+@keyframes btn-gradient-animation {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+.gradient-btn.live {
+  animation: btn-gradient-animation 3s ease-in-out infinite;
+}
+.nav-tooltip {
+  margin: 0;
+  position: absolute;
+  left: -20px;
+  top: -20px;
+}

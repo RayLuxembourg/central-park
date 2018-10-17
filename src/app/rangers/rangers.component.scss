@@ -1,0 +1,47 @@
+:host {
+  display: block;
+  padding: 20px;
+  overflow-x: hidden;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  @media (max-width: 960px) {
+    grid-template-columns: 1fr;
+  }
+}
+.rangers-index {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  width: 100%;
+
+  max-width: 100%;
+  position: relative;
+  @media (max-width: 960px) {
+    width: 100%;
+  }
+}
+mat-icon[data-color='gold'] {
+  color: #ffd700;
+}
+
+.divider {
+  width: 1px;
+  margin: 6px 0;
+  background: #ededed;
+  position: absolute;
+  right: 20px;
+  height: 95%;
+  top: 50%;
+  transform: translateY(-50%);
+  @media (max-width: 960px) {
+    display: none;
+  }
+}
+
+.title {
+  color: #4c5f99;
+  font-weight: 500;
+}

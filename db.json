@@ -1,0 +1,25 @@
+{
+  "rangers": [
+    {
+      "id": 1,
+      "name": "Ray Luxembourg",
+      "counter": 1,
+      "image": "https://avatars1.githubusercontent.com/u/15327989?v=3&s=400",
+      "reports": 39
+    },
+    {
+      "id": 2,
+      "name": "Zach The Duck",
+      "counter": 3,
+      "image": "https://static1.squarespace.com/static/57b506659de4bb1ba9298b37/57b5068615d5db700b9dc72c/57bc8eb5e58c62993059cb9d/1485204654551/Ashton_Kutcher_ZachGold_1.jpg?format=1000w",
+      "reports": 16
+    },
+    {
+      "id": 3,
+      "name": "Martin Rodrigez",
+      "counter": 0,
+      "image": "https://pbs.twimg.com/profile_images/813065746934808576/iTLDxVWC_400x400.jpg",
+      "reports": 15
+    }
+  ]
+}

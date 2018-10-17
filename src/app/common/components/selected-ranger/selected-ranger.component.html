@@ -1,0 +1,29 @@
+<div class="selected-ranger">
+  <img #profile [attr.data-show]="profile.loaded" (load)="profile.loaded = true" class="profile-photo" [src]="ranger.image"
+    alt="">
+  <div class="name">
+    <p>{{ranger.name}}</p>
+  </div>
+  <div class="count-area" [id]="id">
+    <img class="tree--static" src="assets/tree.png" alt="">
+    <button mat-fab class="add" (click)="count.emit()">
+      <mat-spinner *ngIf="loading" class="spinner" [diameter]="25"></mat-spinner>
+      <mat-icon *ngIf="!loading" color="primary" aria-label="Example icon-button with a heart icon">add</mat-icon>
+    </button>
+  </div>
+
+  <div class="reported">
+    <p>Reported trees: {{ranger.counter}}</p>
+  </div>
+
+  <button mat-flat-button (click)="report.emit()" [disabled]="ranger.counter === 0 || loading">
+    REPORT
+  </button>
+  <div class="trees" [@tree]="ranger.counter">
+    <img class="tree" *ngFor="let count  of ranger.counter | numberToArray;let i = index" [style.left]="i * 30+'px'" src="assets/tree.png"
+      alt="">
+
+  </div>
+  <div class="divider"></div>
+
+</div>

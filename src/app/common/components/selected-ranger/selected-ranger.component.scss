@@ -1,0 +1,97 @@
+:host {
+  // background-image: url('/assets/tree.png');
+  // background-size: contain;
+  // background-repeat: no-repeat;
+  // background-position: right;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+  display: block;
+  img.profile-photo {
+    border-radius: 50%;
+    margin: 0 auto;
+    height: 90px;
+    width: 90px;
+    display: block;
+    object-fit: cover;
+    transform: scale(0);
+    transition-delay: 1s;
+    transition: transform 0.26s ease-in-out;
+    transform-origin: center;
+    &[data-show='true'] {
+      transform: scale(1);
+    }
+    &[data-show='false'] {
+      transform: scale(0);
+    }
+  }
+}
+.trees {
+  display: block;
+  width: 80%;
+  height: 90px;
+  overflow: hidden;
+  position: relative;
+  margin: 10px auto;
+  &:after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    right: 0;
+    top: 0;
+    background: linear-gradient(
+      85deg,
+      rgba(255, 255, 255, 0) 1.26%,
+      rgba(255, 255, 255, 0.44) 47.48%,
+      #fff
+    );
+    opacity: 1;
+    width: 15%;
+    @media (max-width: 960px) {
+      display: none;
+    }
+  }
+}
+.tree {
+  float: left;
+  height: 90px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.tree--static {
+  height: 300px;
+  margin: 0 auto;
+  display: block;
+}
+.count-area {
+  position: relative;
+  .add {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: 0 auto;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    mat-button-wrapper {
+      line-height: 30px;
+      padding: 0;
+    }
+    mat-icon {
+      font-size: 30px;
+      width: 30px;
+      line-height: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.spinner {
+  height: 20px;
+  width: 20px;
+}

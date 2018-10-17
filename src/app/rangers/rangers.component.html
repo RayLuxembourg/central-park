@@ -1,0 +1,50 @@
+<h1 *ngIf="error">
+  Unexpected error
+</h1>
+<div #top class="grid" [@listAnimation]="store.ids.length" *mobxAutorun>
+
+  <!-- <div class="selected-ranger" *ngIf="id">
+    <img #profile [attr.data-show]="profile.loaded" (load)="profile.loaded = true" class="profile-photo" [src]="store.rangers[this.id].image"
+      alt="">
+    <div class="name">
+      <p>{{store.rangers[id].name}}</p>
+    </div>
+    <div class="count-area" rangerCounter [id]="id" #counter="counter">
+      <img class="tree--static" src="assets/tree.png" alt="">
+      <button mat-fab class="add" (click)="counter.add()">
+        <mat-spinner *ngIf="counter.loading" class="spinner" [diameter]="25"></mat-spinner>
+        <mat-icon *ngIf="!counter.loading" color="primary" aria-label="Example icon-button with a heart icon">add</mat-icon>
+      </button>
+    </div>
+
+    <div class="reported">
+      <p>Reported trees: {{store.rangers[id].counter}}</p>
+    </div>
+
+    <button mat-flat-button (click)="counter.report()" [disabled]="store.rangers[id].counter === 0 || counter.loading">
+      REPORT
+    </button>
+    <div class="trees" [@tree]="store.rangers[id].counter">
+      <img class="tree" *ngFor="let count  of store.rangers[id].counter | numberToArray;let i = index" [style.left]="i * 30+'px'"
+        src="assets/tree.png" alt="">
+
+    </div>
+    <div class="divider"></div>
+
+  </div> -->
+  <app-selected-ranger *ngIf="id" [ranger]="store.rangers[id]" rangerCounter #counter="counter" [id]="id" [loading]="counter.loading"
+    (report)="counter.report()" (count)="counter.add()">
+
+  </app-selected-ranger>
+  <div class="rangers-index">
+    <h3 class="title">Rangers</h3>
+
+
+
+    <app-ranger [routerLink]="['/'+store.rangers[id].id]" [attr.data-top]="false" class="ranger" *ngFor="let id of store.ids"
+      [ranger]="store.rangers[id]" (click)="scrollTo()">
+    </app-ranger>
+
+  </div>
+
+</div>
